@@ -1,38 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Excel-like Table</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-      }
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-      th,
-      td {
-        padding: 8px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-      }
-      th {
-        background-color: #f2f2f2;
-      }
-    </style>
+    <title>TrackMaster - Camera Bag</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <table>
-      <thead>
-        <tr>
-          <th>Date/Time</th>
-          <th>Longitude</th>
-          <th>Latitude</th>
-          <th>Google Maps</th>
-        </tr>
-      </thead>
-      <tbody id="dataBody"></tbody>
-    </table>
+    <img
+      alt="camerabag"
+      src="./Untitled design (2).png"
+      width="100%"
+      height="auto"
+    />
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+            <th>Date/Time</th>
+            <th>Longitude</th>
+            <th>Latitude</th>
+            <th>Google Maps</th>
+          </tr>
+        </thead>
+        <tbody id="dataBody"></tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <p>
+        TrackMaster - Camera Bag &copy; 2023. All rights reserved. |
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+      </p>
+    </div>
 
     <script>
       const url =
@@ -71,6 +69,7 @@
             googleMapsLink.href = `https://www.google.com/maps/search/?api=1&query=${feed.field1},${feed.field2}`;
             googleMapsLink.target = "_blank";
             googleMapsLink.textContent = "View on Google Maps";
+            googleMapsLink.classList.add("google-maps-link");
 
             googleMapsCell.appendChild(googleMapsLink);
 
